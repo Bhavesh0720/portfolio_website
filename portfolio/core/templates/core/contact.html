@@ -1,0 +1,64 @@
+{% extends 'core/base.html' %}
+{% block content %}
+    <div class="container">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} mt-2">
+                {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        <h1 class="text-warning mt-5 border-bottom">CONTACT US</h1>
+        <div class="row text-white mb-4">
+            <p class="mx-auto mb-4">
+                Do you have any questions? Please do not hesitate to 
+                contact i will come back to you within matter of hours to help you.
+            </p>
+            <div class="col-sm-9 mb-4">
+                <form method="post" action="{% url 'contact' %}">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputname">Your Name</label>
+                            <input type="text" class="form-control" id="inputname" name="name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputemail">Email</label>
+                            <input type="email" class="form-control" id="inputemail" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputsubject">Your Subject</label>
+                        <input type="text" class="form-control" id="inputsubject" name="subject">
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputtextarea">Your Message</label>
+                        <textarea id="inputtextarea" class="form-control" name="message" required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-primary mt-3 mb-4" type="submit" style="width: 150px;">Send</button>
+                    </div>
+                </form>
+               
+
+            </div>
+
+            <div class="col-sm-3 text-center">
+                <ul class="list-unstyled">
+                    <li>
+                        <i class="fas fa-map-marker-alt mt-3 fa-2x i-color"></i>
+                        <p>Ahemdabad, Gujrat, India</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone mt-4 fa-2x i-color"></i>
+                        <p>327689567</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope mt-4 fa-2x i-color"></i>
+                        <p>contact@gmail.com</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>    
+{% endblock content %}

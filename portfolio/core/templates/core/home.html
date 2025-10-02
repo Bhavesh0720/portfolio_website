@@ -1,0 +1,29 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="mt-5">
+        <div class="text-center">
+            <img src="{% static 'core/images/pic_2.png' %}" alt="My Picture" class="img-thumbnail" width="250px" height="100px">
+        </div>
+        <div class="mt-3 text-white mx-5 text-justify">
+            <h2 class="font-weight-bold st-font">
+                Hello,
+            </h2>
+            <div class="px-4" style="line-height: 2rem;">
+                <p style="text-indent:100px;"> I am <b class="text-warning">
+                    Bhavesh Parmar </b>, a passionate <b class="text-warning">Django Developer</b> currently pursuing an internship, 
+                    where I am gaining hands-on experience in building and optimizing web applications.</p>
+                <p>I have a strong foundation in <b class="text-warning">Python, Django, Flask, HTML, CSS, and SQL</b>.  
+                   During my internship, I am working on real-world projects, collaborating with senior developers, 
+                   and contributing to the development of scalable and efficient web solutions.</p>
+                <p>My focus is on <b class="text-warning">Django development</b>, including backend logic, database design, 
+                   REST API integration, authentication systems, and deployment.  
+                   I am dedicated to writing clean, maintainable code and continuously improving my skills to deliver high-quality applications.</p>                
+            </div>
+        </div>
+        <div class="text-center">
+            <a href="{% static 'core/doc/my_resume.pdf' %}" target="_blank" class="btn btn-outline-warning my-3 mr-5">View My Resume</a>
+            <a href="{% static 'core/doc/my_resume.pdf' %}" download target="_blank" class="btn btn-outline-warning my-3 mr-5">Download My Resume</a>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,44 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-warning mb-5 border-bottom">My Projects</h1>
+
+    {% for project in projects %}
+    <div class="mb-5">
+        <!-- Project Name -->
+        <h3 class="text-white text-center">{{ project.title }}</h3>
+
+        <!-- Description -->
+        <p class="text-muted text-center">{{ project.description }}</p>
+
+        <!-- Technologies Used -->
+        <p class="text-center"><b class="text-warning">Technologies Used:</b> {{ project.technologies|join:", " }}</p>
+
+        <!-- Button to Open Project Report -->
+        {% if project.report %}
+        <div class="text-center mb-3">
+            <a href="{% static project.report %}" target="_blank" class="btn btn-outline-info px-4 py-2 mr-5">
+                View Project Report
+            </a>
+            <a href="{% static project.report %}" download target="_blank" class="btn btn-outline-info px-4 py-2">
+                Download Project Report
+            </a>
+        </div>
+        {% endif %}
+        
+        {% if project.link %}
+            <div class="text-center mb-3">
+                <a href="{{ project.link }}" target="_blank" class="btn btn-outline-success px-4 py-2">
+                    Visit Project
+                </a>
+            </div>
+        {% endif %}
+
+
+        <hr class="border-secondary mt-4">
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}

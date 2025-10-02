@@ -1,0 +1,72 @@
+{% load static %}
+<!-- Sidebar -->
+<div class="d-none d-md-flex flex-column border-right border-warning h-100 position-fixed bg-dark" style="width: 220px;">
+    <div class="text-center">
+        <img src="{% static 'core/images/pic.png' %}" alt="Profile Picture" 
+             class="img-fluid rounded-circle mt-4"
+             width="130px" height="100px">
+        <h3 class="text-white mt-2 st-font">Bhavesh Parmar</h3>
+    </div>
+    <hr class="border-light">
+
+    <!-- navigation links -->
+    <nav class="nav flex-column text-center">
+        <a href="{% url 'home' %}" class="nav-link {{home}}">Home</a>
+        <a href="{% url 'services' %}" class="nav-link {{services}}">Services</a>
+        <a href="{% url 'skills' %}" class="nav-link {{skills}}">Skills</a>
+        <a href="{% url 'projects' %}" class="nav-link {{active}}">Projects</a>
+        <a href="{% url 'contact' %}" class="nav-link {{contact}}">Contact</a>
+    </nav>
+
+    <!-- social icons -->
+    <div class="text-center mt-auto mb-4">
+        <a href="https://www.linkedin.com/in/bhavesh-parmar-6b3616335" target="_blank">
+            <i class="fab fa-linkedin fa-2x i-color mr-2"></i>
+        </a>
+        <a href="https://github.com/bhavesh0720" target="_blank">
+            <i class="fab fa-github fa-2x i-color mr-2"></i>
+        </a>
+        <a href="https://www.instagram.com/bhavesh0720/" target="_blank">
+            <i class="fab fa-instagram fa-2x i-color mr-2"></i>
+        </a>
+    </div>
+</div>
+
+<!-- Mobile Navbar -->
+<nav class="navbar navbar-dark bg-dark d-md-none">
+    <div class="container-fluid">
+        <a class="navbar-brand st-font text-warning" href="#">Bhavesh Parmar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar" aria-controls="mobileSidebar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Offcanvas Sidebar for Mobile -->
+<div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" id="mobileSidebar">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title st-font">Menu</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <nav class="nav flex-column text-center">
+            <a href="{% url 'home' %}" class="nav-link text-white {{home}}">Home</a>
+            <a href="{% url 'services' %}" class="nav-link text-white {{services}}">Services</a>
+            <a href="{% url 'skills' %}" class="nav-link text-white {{skills}}">Skills</a>
+            <a href="{% url 'projects' %}" class="nav-link text-white {{active}}">Projects</a>
+            <a href="{% url 'contact' %}" class="nav-link text-white {{contact}}">Contact</a>
+        </nav>
+        <hr class="border-light">
+        <div class="text-center">
+            <a href="https://www.linkedin.com/in/bhavesh-parmar-6b3616335" target="_blank">
+                <i class="fab fa-linkedin fa-2x i-color mr-2"></i>
+            </a>
+            <a href="https://github.com/bhavesh0720" target="_blank">
+                <i class="fab fa-github fa-2x i-color mr-2"></i>
+            </a>
+            <a href="https://www.instagram.com/bhavesh0720/" target="_blank">
+                <i class="fab fa-instagram fa-2x i-color mr-2"></i>
+            </a>
+        </div>
+    </div>
+</div>
