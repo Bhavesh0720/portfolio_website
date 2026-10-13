@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-$r+g=57zel4p6inx7*ybb-6du(e5rlsi9x=8h$qyatm!iy6piw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['bhavesh0720.pythonanywhere.com']
 
 
 # Application definition
@@ -130,8 +130,15 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'yourgmail.com'
-EMAIL_HOST_PASSWORD = 'yourapppassword'  
+EMAIL_HOST_USER = 'bhavesh0720@gmail.com'
+EMAIL_HOST_PASSWORD = 'fjgvpobighjkzopi'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
-
+# Force HTTPS
+SECURE_SSL_REDIRECT = True               # Redirect all HTTP requests to HTTPS
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')  # For PythonAnywhere proxy
+SESSION_COOKIE_SECURE = True             # Secure cookies
+CSRF_COOKIE_SECURE = True                # Secure CSRF cookie
+SECURE_HSTS_SECONDS = 31536000           # 1 year HSTS for browsers
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True

@@ -27,8 +27,8 @@ def contact(request):
             send_mail(
                 subject,
                 full_message,
-                email,  
-                [settings.DEFAULT_FROM_EMAIL],  
+                settings.DEFAULT_FROM_EMAIL,  # sender
+                [settings.DEFAULT_FROM_EMAIL],  # receiver (your email)
                 fail_silently=False,
             )
             messages.success(request, "Your message has been sent successfully!")
@@ -43,22 +43,27 @@ def projects(request):
     project_list = [
         {
             'title': 'Footwear Master Ecommerce Site',
-            'description': 'An Ecommerce website for purchasing footwears.',
-            'technologies': ['Python', 'Django', 'HTML', 'CSS', 'JavaScript', 'Bootstrap'], 
+            'description': 'Built a full-stack ecommerce application for online footwear shopping with a user-friendly and responsive interface. Implemented product listings, category filtering, cart functionality, secure checkout, user authentication, and order management to provide a seamless shopping experience.',
+            'technologies': ['Python', 'Django', 'HTML', 'CSS', 'JavaScript', 'Bootstrap'],
             'link': 'https://bhavesh5433.pythonanywhere.com/',
         },
         {
+            'title': 'Blogora Site',
+            'description': 'Designed and developed a full-stack blogging platform that enables users to create, manage, and explore blog content through a clean and responsive interface. Implemented user authentication, category-based content organization, blog management features, and an admin dashboard for efficient content moderation.',
+            'technologies': ['Python', 'Django', 'HTML5', 'CSS3', 'Bootstrap5'],
+            'link': 'https://blogora.pythonanywhere.com/',
+        },
+        {
             'title': 'Grand Hotel Management System',
-            'description': 'A hotel management system to manage bookings, rooms, and customer data efficiently.',
+            'description': 'Developed a hotel management system to streamline room bookings, customer check-in/check-out, and reservation handling. Implemented room availability tracking, billing management, customer record storage, and an administrative dashboard to improve operational efficiency and reduce manual workload.',
             'technologies': ['Python', 'Flask', 'MySQL', 'HTML', 'CSS', 'JavaScript', 'Bootstrap'],
-            'report': 'core/doc/grand_hotel.pdf',  # Path to PDF in static folder
+            'report': 'core/doc/sem5_photos.pdf',
         },
         {
             'title': 'Bhumi TV Mart',
-            'description': 'A desktop-based retail management system for TV and electronics store, built using Python and Tkinter.',
+            'description': 'Engineered a desktop-based retail management system for an electronics store to simplify inventory tracking, customer management, billing, and sales monitoring. Built with a user-friendly GUI, the system improves daily retail operations through efficient data handling and streamlined reporting.',
             'technologies': ['Python', 'Tkinter', 'MySQL'],
-            'report': 'core/doc/bhumi_tv_mart.pdf',
+            'report': 'core/doc/sem6_photos.pdf',
         },
-        # Add more projects here if needed
     ]
     return render(request, 'core/projects.html', {'projects': project_list, 'active':'active'})
